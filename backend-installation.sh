@@ -40,7 +40,7 @@ VALIDATE $? "Disabling default nodejs"
 dnf module enable nodejs:20 -y &>>$LOGFILE
 VALIDATE $? "Enabling nodejs version 20"
 
-dnf install nodejs -y &>>$LOGFILE
+dnf install nodejs -y  &>>$LOGFILE
 VALIDATE $? "Installing nodejs"
 
 id expense &>>$LOGFILE
@@ -50,7 +50,7 @@ then
     VALIDATE $? "Creating expense user"
 else
     echo -e "Expense user is already created..... $Y SKIPPING $N"
-if
+fi
 
 mkdir -p /app
 
