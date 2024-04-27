@@ -80,7 +80,7 @@ systemctl enable backend &>>$LOGFILE
 VALIDATE $? "Enabling backend"
 
 dnf install mysql -y &>>$LOGFILE
-VALIDATE $? "Installing MySQL clinet"
+VALIDATE $? "Installing MySQL client"
 
 
 mysql -h db.goliexpense.online -uroot -p${mysql_root_password} < /app/schema/backend.sql &>>$LOGFILE
