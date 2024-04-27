@@ -79,6 +79,9 @@ VALIDATE $? "Starting backend"
 systemctl enable backend &>>$LOGFILE
 VALIDATE $? "Enabling backend"
 
+dnf install mysql -y &>>$LOGFILE
+VALIDATE $? "Installing MySQL clinet"
+
 
 mysql -h db.goliexpense.online -uroot -p${mysql_root_password} < /app/schema/backend.sql &>>$LOGFILE
 VALIDATE $? "Schema loading"
